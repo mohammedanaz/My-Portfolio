@@ -74,7 +74,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <div id="hero" class="hero route bg-image" style="background-image: url(assets/img/my-bg-new.jpg)">
+  <div id="hero" class="hero route  bg-image" style="background-image: url(assets/img/my-bg-new.jpg)">
     <div class="overlay-itro"></div>
     <div class="hero-content display-table">
       <div class="table-cell">
@@ -300,7 +300,7 @@
                 Portfolio
               </h3>
               <p class="subtitle-a">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              
               </p>
               <div class="line-mf"></div>
             </div>
@@ -379,78 +379,6 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-4.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Bindo Laro Cado</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-5.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Studio Lena Mado</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2018</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="work-box">
-              <a href="assets/img/work-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <img src="assets/img/work-6.jpg" alt="" class="img-fluid">
-                </div>
-              </a>
-              <div class="work-content">
-                <div class="row">
-                  <div class="col-sm-8">
-                    <h2 class="w-title">Studio Big Bang</h2>
-                    <div class="w-more">
-                      <span class="w-ctegory">Web Design</span> / <span class="w-date">18 Sep. 2017</span>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="w-like">
-                      <a href="portfolio-details.html"> <span class="bi bi-plus-circle"></span></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
       </div>
@@ -517,7 +445,7 @@
                 Blog
               </h3>
               <p class="subtitle-a">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                
               </p>
               <div class="line-mf"></div>
             </div>
@@ -532,7 +460,7 @@
               <div class="card-body">
                 <div class="card-category-box">
                   <div class="card-category">
-                    <h6 class="category">Travel</h6>
+                    <h6 class="category">WEB DESIGN</h6>
                   </div>
                 </div>
                 <h3 class="card-title"><a href="blog-single.html">See more ideas about Travel</a></h3>
@@ -637,20 +565,35 @@
                       </h5>
                     </div>
                     <div>
-                      
-                      <form class="my-form">
+        <!----------- Form-------------- -->
+
+        <!--google-sheet-action-link----- action="https://script.google.com/macros/s/AKfycbzwf6HgztngTJR9_ZKfpIHf5_EGtEEf6vVT7dFbXVR-ZRBsBU6v4LoxYJk7ZLAql-H0/exec" -->
+
+                      <form  autocomplete="off" id="form-id" class="my-form" name="my-form">
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
                               <input type="text" class="form-control" id="name" placeholder="Your Name">
-                              <span id="spanname"></span>
+                              <span id="span-name" class="text-danger"></span>
                             </div>
                           </div>
-                    
-                          <!-- Other form fields go here -->
-                    
+
                           <div class="col-md-12 mb-3">
-                            <button type="button" class="btn bg-primary" onclick="formValidate()">SUBMIT</button>
+                            <div class="form-group">
+                              <input type="email" class="form-control" id="email" placeholder="Your email">
+                              <span id="span-email" class="text-danger"></span>
+                            </div>
+                          </div>
+
+                          <div class="col-md-12 mb-3">
+                            <div class="form-group">
+                              <input type="text" class="form-control" id="country" placeholder="Your Country">
+                              <span id="span-country" class="text-danger"></span>
+                            </div>
+                          </div>                          
+                  
+                          <div class="col-md-12 mb-3">
+                            <button type="button" onclick="formValidate()" class="btn btn-outline-primary text-danger">SUBMIT</button>
                           </div>
                         </div>
                       </form>
@@ -665,23 +608,23 @@
                     </div>
                     <div class="more-info">
                       <p class="lead">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis dolorum dolorem soluta quidem
-                        expedita aperiam aliquid at.
-                        Totam magni ipsum suscipit amet? Autem nemo esse laboriosam ratione nobis
-                        mollitia inventore?
+                        &nbsp;&nbsp;Whether you have any questions about our services,  suggestions for improvement, or you simply want to connect,
+                         we look forward to hearing from you. Your engagement is important to us,
+                          and we strive to respond promptly to ensure a meaningful and productive conversation. Thank you for considering getting in touch with us;
+                         we appreciate your interest and look forward to the opportunity to connect with you.
                       </p>
                       <ul class="list-ico">
-                        <li><span class="bi bi-geo-alt"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                        <li><span class="bi bi-phone"></span> (617) 557-0089</li>
-                        <li><span class="bi bi-envelope"></span> contact@example.com</li>
+                        <li><span class="bi bi-geo-alt"></span> Calicut,Kerala,India</li>
+                        <li><span class="bi bi-phone"></span> +91-9526420880</li>
+                        <li><span class="bi bi-envelope"></span> mohammedanaz@gmail.com</li>
                       </ul>
                     </div>
                     <div class="socials">
                       <ul>
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li>
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
-                        <li><a href=""><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
+                        <li><a href="https://www.facebook.com/login/"><span class="ico-circle"><i class="bi bi-facebook"></i></span></a></li>
+                        <li><a href="https://www.instagram.com/accounts/login/"><span class="ico-circle"><i class="bi bi-instagram"></i></span></a></li>
+                        <li><a href="https://twitter.com/i/flow/login"><span class="ico-circle"><i class="bi bi-twitter"></i></span></a></li>
+                        <li><a href="https://www.linkedin.com/home"><span class="ico-circle"><i class="bi bi-linkedin"></i></span></a></li>
                       </ul>
                     </div>
                   </div>
@@ -709,7 +652,7 @@
               Licensing information: https://bootstrapmade.com/license/
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
             -->
-              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              Designed by <a href="">BootstrapMade</a>
             </div>
           </div>
         </div>
@@ -721,25 +664,68 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
+      <!-- JS for form validation -->
 
   <script>
     function formValidate() {
-      var name = document.getElementById("name").value;
-      var spanName = document.getElementById("spanname");
-
-      // Reset the span message
+      var name = document.getElementById("name");
+      var spanName = document.getElementById("span-name");
       spanName.innerHTML = "";
 
-      // Check if the name is empty
-      if (name.trim() === "") {
-        spanName.innerHTML = "Please enter your name.";
-      } else {
-        // If the name is not empty, perform additional processing or validation
-        // ...
+      var email = document.getElementById("email");
+      var spanEmail = document.getElementById("span-email");
+      spanEmail.innerHTML = "";
 
-        // For example, you might want to alert a success message
+      var country = document.getElementById("country");
+      var spanCountry = document.getElementById("span-country");
+      spanCountry.innerHTML = "";
+
+      var regName=/^[a-zA-Z]+$/;
+      var nameCheck=regName.test(name.value);
+
+      var regEmail=/^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}(?:\.[a-zA-Z]{2,3})?$/;
+      var emailCheck=regEmail.test(email.value);
+
+      var regCountry=/^[a-zA-Z]+(?:[ ]?[a-zA-Z]+)*$/;
+      var countryCheck=regCountry.test(country.value);
+     
+      if (nameCheck==false) {
+        if(name.value.trim()===""){
+          spanName.innerHTML = "Must enter a name.";
+          return false;
+        }
+        else{
+          spanName.innerHTML = "Please enter allowed characters.";
+          return false;
+        }
+      }
+
+      if (emailCheck==false) {
+        if(email.value.trim()===""){
+          spanEmail.innerHTML = "Must enter an email Id.";
+          return false;
+        }
+        else{
+          spanEmail.innerHTML = "Please enter a valid email Id";
+          return false;
+        }
+      }
+
+      if (countryCheck==false) {
+        if(country.value.trim()===""){
+          spanCountry.innerHTML = "Must enter a country name.";
+          return false;
+        }
+        else{
+          spanCountry.innerHTML = "Please enter allowed characters.";
+          return false;
+        }
+      }
+      else {
+        
         alert("Form submitted successfully!");
       }
+      return true;
     }
   </script>
 
@@ -757,19 +743,3 @@
 </body>
 
 </html>
-
-
-
-<div class="col-md-12 mb-3">
-  <div class="form-group">
-    <input type="email" class="form-control"  id="email" placeholder="Your Email">
-    <span id="span-email"></span>
-  </div>
-</div>
-
-<div class="col-md-12 mb-3">
-  <div class="form-group">
-    <input type="text" class="form-control"  id="country" placeholder="Country">
-    <span id="span-country"></span>
-  </div>
-</div>

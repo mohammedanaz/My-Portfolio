@@ -743,6 +743,12 @@ a:hover {
   background-size: cover;
 }
 
+@media (max-width: 710px){
+  .hero {
+    background-size: contain;
+  }
+}
+
 .hero .hero-content {
   text-align: center;
   position: absolute;
