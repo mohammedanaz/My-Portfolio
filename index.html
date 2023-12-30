@@ -566,34 +566,31 @@
                     </div>
                     <div>
         <!----------- Form-------------- -->
-
-        <!--google-sheet-action-link----- action="https://script.google.com/macros/s/AKfycbzwf6HgztngTJR9_ZKfpIHf5_EGtEEf6vVT7dFbXVR-ZRBsBU6v4LoxYJk7ZLAql-H0/exec" -->
-
-                      <form  autocomplete="off" id="form-id" class="my-form" name="my-form">
+                      <form action="https://sheetdb.io/api/v1/p6om0sx6wopyx"   id="form-id" class="my-form" name="my-form" method="post" autocomplete="off">
                         <div class="row">
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" id="name" placeholder="Your Name">
+                              <input type="text" class="form-control" id="name" name="data[Name]" placeholder="Your Name">
                               <span id="span-name" class="text-danger"></span>
                             </div>
                           </div>
 
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="email" class="form-control" id="email" placeholder="Your email">
+                              <input type="email" class="form-control" id="email" name="data[Email]" placeholder="Your email">
                               <span id="span-email" class="text-danger"></span>
                             </div>
                           </div>
 
                           <div class="col-md-12 mb-3">
                             <div class="form-group">
-                              <input type="text" class="form-control" id="country" placeholder="Your Country">
+                              <input type="text" class="form-control" id="country" name="data[Country]" placeholder="Your Country">
                               <span id="span-country" class="text-danger"></span>
                             </div>
                           </div>                          
                   
                           <div class="col-md-12 mb-3">
-                            <button type="button" onclick="formValidate()" class="btn btn-outline-primary text-danger">SUBMIT</button>
+                            <button type="submit" class="btn btn-outline-primary text-danger">SUBMIT</button>
                           </div>
                         </div>
                       </form>
@@ -664,6 +661,33 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 
+      <!-- JS for form Submission -->
+
+  <script>
+      var form=document.getElementById("form-id");
+      form.addEventListener("submit",e => {
+        e.preventDefault();
+
+        if(formValidate()){
+          fetch(form.action,{
+          method : "POST",
+          body: new FormData(document.getElementById("form-id")),
+        }).then(
+          response => response.json()
+        ).then((data) =>{
+          if (data.hasOwnProperty("created") && data.created === 1){
+            alert("Server Response: Form Succesfully Submitted");
+            form.reset();
+          }
+          else{
+            alert("Server Response: Form Submission Failed");
+          }
+        });
+        }
+      });
+  </script>
+
+
       <!-- JS for form validation -->
 
   <script>
@@ -680,7 +704,7 @@
       var spanCountry = document.getElementById("span-country");
       spanCountry.innerHTML = "";
 
-      var regName=/^[a-zA-Z]+$/;
+      var regName=/^[a-zA-Z ]+$/;
       var nameCheck=regName.test(name.value);
 
       var regEmail=/^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}(?:\.[a-zA-Z]{2,3})?$/;
@@ -688,21 +712,28 @@
 
       var regCountry=/^[a-zA-Z]+(?:[ ]?[a-zA-Z]+)*$/;
       var countryCheck=regCountry.test(country.value);
-     
-      if (nameCheck==false) {
+
+      if(name.value.trim()==="" && email.value.trim()==="" && country.value.trim()===""){
+        spanName.innerHTML = "These fields cannot be blank.";
+        spanEmail.innerHTML = "These fields cannot be blank.";
+        spanCountry.innerHTML = "These fields cannot be blank.";
+        return false;
+      }
+      else{
+        if (nameCheck==false) {
         if(name.value.trim()===""){
-          spanName.innerHTML = "Must enter a name.";
+          spanName.innerHTML = "This field cannot be blank.";
           return false;
         }
         else{
-          spanName.innerHTML = "Please enter allowed characters.";
+          spanName.innerHTML = "Please enter alphabets only.";
           return false;
         }
       }
 
       if (emailCheck==false) {
         if(email.value.trim()===""){
-          spanEmail.innerHTML = "Must enter an email Id.";
+          spanEmail.innerHTML = "This field cannot be blank.";
           return false;
         }
         else{
@@ -713,19 +744,20 @@
 
       if (countryCheck==false) {
         if(country.value.trim()===""){
-          spanCountry.innerHTML = "Must enter a country name.";
+          spanCountry.innerHTML = "This field cannot be blank.";
           return false;
         }
         else{
-          spanCountry.innerHTML = "Please enter allowed characters.";
+          spanCountry.innerHTML = "Please enter alphabets only.";
           return false;
         }
       }
       else {
         
-        alert("Form submitted successfully!");
+        // alert("Form submitted successfully!");
+        return true;
       }
-      return true;
+      }
     }
   </script>
 
